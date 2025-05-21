@@ -4,7 +4,8 @@
   "info": {
     "singularName": "order",
     "pluralName": "orders",
-    "displayName": "orders"
+    "displayName": "orders",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -54,6 +55,9 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "orders"
+    },
+    "date": {
+      "type": "date"
     }
   }
 }
