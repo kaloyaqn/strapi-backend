@@ -32,6 +32,7 @@ export default () => ({
   },
   graphql: {
     config: {
+      introspection: true,
       playgroundAlways: true,
     },
   },

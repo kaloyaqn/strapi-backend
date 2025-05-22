@@ -83,3 +83,37 @@ module.exports = ({ env }) => {
     },
   };
 };
+
+// const path = require('path');
+
+// module.exports = ({ env }) => {
+//   const isProduction = env('NODE_ENV') === 'production';
+
+//   const client = isProduction ? 'postgres' : 'sqlite';
+
+//   const connections = {
+//     postgres: {
+//       connection: {
+//         connectionString: env('DATABASE_URL'),
+//         schema: env('DATABASE_SCHEMA', 'public'),
+//         ssl: env.bool('DATABASE_SSL', false) && {
+//           rejectUnauthorized: env.bool('DATABASE_SSL_REJECT_UNAUTHORIZED', false),
+//           ca: env('DATABASE_SSL_CA'),
+//         },
+//       },
+//     },
+//     sqlite: {
+//       connection: {
+//         filename: path.join(__dirname, '..', '..', env('DATABASE_FILENAME', '.tmp/data.db')),
+//       },
+//       useNullAsDefault: true,
+//     },
+//   };
+
+//   return {
+//     connection: {
+//       client,
+//       ...connections[client],
+//     },
+//   };
+// };
