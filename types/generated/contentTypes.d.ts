@@ -476,7 +476,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     order: Schema.Attribute.Integer;
-    praent: Schema.Attribute.Relation<'oneToMany', 'api::category.category'>;
+    parent: Schema.Attribute.Relation<'oneToMany', 'api::category.category'>;
     products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.String;
