@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_shared_product_sections",
+  "info": {
+    "displayName": "product_section",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "layout_type": {
+      "type": "enumeration",
+      "enum": [
+        "only_products",
+        "products_with_a_banner"
+      ]
+    },
+    "show_section": {
+      "type": "boolean"
+    },
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.banner-block"
+    }
+  }
+}

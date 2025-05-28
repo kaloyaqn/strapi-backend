@@ -1,5 +1,23 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedBannerBlock extends Struct.ComponentSchema {
+  collectionName: 'components_shared_banner_blocks';
+  info: {
+    displayName: 'banner_block';
+    icon: 'landscape';
+  };
+  attributes: {
+    button_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    button_link: Schema.Attribute.String;
+    button_text: Schema.Attribute.String;
+    description: Schema.Attribute.RichText;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    show_banner: Schema.Attribute.Boolean;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedOpenGraph extends Struct.ComponentSchema {
   collectionName: 'components_shared_open_graphs';
   info: {
@@ -20,6 +38,25 @@ export interface SharedOpenGraph extends Struct.ComponentSchema {
       }>;
     ogType: Schema.Attribute.String;
     ogUrl: Schema.Attribute.String;
+  };
+}
+
+export interface SharedProductSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_product_sections';
+  info: {
+    description: '';
+    displayName: 'product_section';
+    icon: 'dashboard';
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'shared.banner-block', false>;
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    description: Schema.Attribute.String;
+    layout_type: Schema.Attribute.Enumeration<
+      ['only_products', 'products_with_a_banner']
+    >;
+    show_section: Schema.Attribute.Boolean;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -54,7 +91,9 @@ export interface SharedSeo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.banner-block': SharedBannerBlock;
       'shared.open-graph': SharedOpenGraph;
+      'shared.product-section': SharedProductSection;
       'shared.seo': SharedSeo;
     }
   }
