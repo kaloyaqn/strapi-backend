@@ -14,7 +14,8 @@
     "sections": {
       "type": "dynamiczone",
       "components": [
-        "shared.product-section"
+        "shared.product-section",
+        "shared.small-banner"
       ]
     }
   }
