@@ -88,6 +88,24 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSmallBanner extends Struct.ComponentSchema {
+  collectionName: 'components_shared_small_banners';
+  info: {
+    displayName: 'small_banner';
+    icon: 'book';
+  };
+  attributes: {
+    background_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    button_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    button_text: Schema.Attribute.String;
+    description: Schema.Attribute.RichText;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -95,6 +113,7 @@ declare module '@strapi/strapi' {
       'shared.open-graph': SharedOpenGraph;
       'shared.product-section': SharedProductSection;
       'shared.seo': SharedSeo;
+      'shared.small-banner': SharedSmallBanner;
     }
   }
 }
