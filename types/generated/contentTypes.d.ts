@@ -567,12 +567,12 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     date: Schema.Attribute.Date;
     email: Schema.Attribute.Email;
     firstName: Schema.Attribute.String;
-    items: Schema.Attribute.JSON;
     lastName: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
       Schema.Attribute.Private;
     notes: Schema.Attribute.Text;
+    order_item: Schema.Attribute.Component<'shared.order-item', true>;
     order_status: Schema.Attribute.Enumeration<
       ['pending', 'processing', 'completed', 'cancelled']
     >;

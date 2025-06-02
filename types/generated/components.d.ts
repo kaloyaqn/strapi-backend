@@ -41,6 +41,19 @@ export interface SharedOpenGraph extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedOrderItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_order_items';
+  info: {
+    displayName: 'OrderItem';
+  };
+  attributes: {
+    order: Schema.Attribute.Relation<'manyToOne', 'api::order.order'>;
+    price: Schema.Attribute.Decimal;
+    product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
+    quantity: Schema.Attribute.Integer;
+  };
+}
+
 export interface SharedProductSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_product_sections';
   info: {
@@ -111,6 +124,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'shared.banner-block': SharedBannerBlock;
       'shared.open-graph': SharedOpenGraph;
+      'shared.order-item': SharedOrderItem;
       'shared.product-section': SharedProductSection;
       'shared.seo': SharedSeo;
       'shared.small-banner': SharedSmallBanner;

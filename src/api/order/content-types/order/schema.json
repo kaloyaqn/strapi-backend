@@ -35,9 +35,6 @@
     "notes": {
       "type": "text"
     },
-    "items": {
-      "type": "json"
-    },
     "total": {
       "type": "decimal"
     },
@@ -58,6 +55,11 @@
     },
     "date": {
       "type": "date"
+    },
+    "order_item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.order-item"
     }
   }
 }
