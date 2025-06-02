@@ -29,7 +29,7 @@
     "city": {
       "type": "string"
     },
-    "posstalCode": {
+    "postalCode": {
       "type": "string"
     },
     "notes": {
