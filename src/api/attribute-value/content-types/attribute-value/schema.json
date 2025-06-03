@@ -4,7 +4,8 @@
   "info": {
     "singularName": "attribute-value",
     "pluralName": "attribute-values",
-    "displayName": "AttributeValue"
+    "displayName": "AttributeValue",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,9 @@
       "relation": "manyToMany",
       "target": "api::product.product",
       "mappedBy": "attributes"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }

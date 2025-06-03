@@ -377,6 +377,7 @@ export interface ApiAttributeValueAttributeValue
   extends Struct.CollectionTypeSchema {
   collectionName: 'attribute_values';
   info: {
+    description: '';
     displayName: 'AttributeValue';
     pluralName: 'attribute-values';
     singularName: 'attribute-value';
@@ -400,6 +401,7 @@ export interface ApiAttributeValueAttributeValue
       Schema.Attribute.Private;
     products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -410,6 +412,7 @@ export interface ApiAttributeValueAttributeValue
 export interface ApiAttributeAttribute extends Struct.CollectionTypeSchema {
   collectionName: 'attributes';
   info: {
+    description: '';
     displayName: 'Attribute';
     pluralName: 'attributes';
     singularName: 'attribute';
@@ -433,6 +436,7 @@ export interface ApiAttributeAttribute extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
