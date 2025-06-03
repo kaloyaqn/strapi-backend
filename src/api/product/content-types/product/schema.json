@@ -65,6 +65,12 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::product.product"
+    },
+    "attributes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::attribute-value.attribute-value",
+      "inversedBy": "products"
     }
   }
 }

@@ -373,6 +373,72 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAttributeValueAttributeValue
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'attribute_values';
+  info: {
+    displayName: 'AttributeValue';
+    pluralName: 'attribute-values';
+    singularName: 'attribute-value';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    attribute: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::attribute.attribute'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::attribute-value.attribute-value'
+    > &
+      Schema.Attribute.Private;
+    products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    value: Schema.Attribute.String;
+  };
+}
+
+export interface ApiAttributeAttribute extends Struct.CollectionTypeSchema {
+  collectionName: 'attributes';
+  info: {
+    displayName: 'Attribute';
+    pluralName: 'attributes';
+    singularName: 'attribute';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    attribute_values: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::attribute-value.attribute-value'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::attribute.attribute'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
   collectionName: 'banners';
   info: {
@@ -577,7 +643,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
       ['pending', 'processing', 'completed', 'cancelled']
     >;
     phone: Schema.Attribute.String;
-    posstalCode: Schema.Attribute.String;
+    postalCode: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     total: Schema.Attribute.Decimal;
     updatedAt: Schema.Attribute.DateTime;
@@ -631,6 +697,10 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
   attributes: {
     active: Schema.Attribute.Boolean;
+    attributes: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::attribute-value.attribute-value'
+    >;
     brand: Schema.Attribute.Relation<'oneToOne', 'api::brand.brand'>;
     categories: Schema.Attribute.Relation<
       'manyToMany',
@@ -1175,6 +1245,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::attribute-value.attribute-value': ApiAttributeValueAttributeValue;
+      'api::attribute.attribute': ApiAttributeAttribute;
       'api::banner.banner': ApiBannerBanner;
       'api::brand.brand': ApiBrandBrand;
       'api::category.category': ApiCategoryCategory;

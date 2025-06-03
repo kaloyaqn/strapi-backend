@@ -47,7 +47,6 @@ export interface SharedOrderItem extends Struct.ComponentSchema {
     displayName: 'OrderItem';
   };
   attributes: {
-    order: Schema.Attribute.Relation<'manyToOne', 'api::order.order'>;
     price: Schema.Attribute.Decimal;
     product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
     quantity: Schema.Attribute.Integer;

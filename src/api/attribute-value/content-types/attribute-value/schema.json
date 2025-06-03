@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attribute_values",
+  "info": {
+    "singularName": "attribute-value",
+    "pluralName": "attribute-values",
+    "displayName": "AttributeValue"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "attribute": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::attribute.attribute",
+      "inversedBy": "attribute_values"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "attributes"
+    }
+  }
+}

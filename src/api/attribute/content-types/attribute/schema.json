@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attributes",
+  "info": {
+    "singularName": "attribute",
+    "pluralName": "attributes",
+    "displayName": "Attribute"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "attribute_values": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::attribute-value.attribute-value",
+      "mappedBy": "attribute"
+    }
+  }
+}
