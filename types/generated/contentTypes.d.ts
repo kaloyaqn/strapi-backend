@@ -390,6 +390,8 @@ export interface ApiAttributeValueAttributeValue
       'manyToOne',
       'api::attribute.attribute'
     >;
+    color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
