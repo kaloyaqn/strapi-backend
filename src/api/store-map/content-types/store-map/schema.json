@@ -46,7 +46,7 @@
       "type": "string"
     },
     "note": {
-      "type": "blocks"
+      "type": "text"
     },
     "city": {
       "type": "string"
