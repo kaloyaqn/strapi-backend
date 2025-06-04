@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "store_maps",
+  "info": {
+    "singularName": "store-map",
+    "pluralName": "store-maps",
+    "displayName": "store-map"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "county": {
+      "type": "enumeration",
+      "enum": [
+        "greece",
+        "romania"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "bulstat": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "note": {
+      "type": "blocks"
+    }
+  }
+}
