@@ -15,7 +15,8 @@
       "type": "enumeration",
       "enum": [
         "greece",
-        "romania"
+        "romania",
+        "bulgaria"
       ]
     },
     "name": {
