@@ -744,6 +744,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
 export interface ApiStoreMapStoreMap extends Struct.CollectionTypeSchema {
   collectionName: 'store_maps';
   info: {
+    description: '';
     displayName: 'store-map';
     pluralName: 'store-maps';
     singularName: 'store-map';
@@ -754,6 +755,7 @@ export interface ApiStoreMapStoreMap extends Struct.CollectionTypeSchema {
   attributes: {
     address: Schema.Attribute.String;
     bulstat: Schema.Attribute.String;
+    city: Schema.Attribute.String;
     county: Schema.Attribute.Enumeration<['greece', 'romania']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
