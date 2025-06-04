@@ -18,7 +18,12 @@ export default [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['*'], // Replace '*' with your frontend's URL in production
+      origin: [
+        'https://lyraq.vercel.app',
+        'http://localhost:3000',
+        'http://localhost:3001',
+        'https://nordic-storefront.vercel.app'
+      ],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     },
   },
