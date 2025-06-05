@@ -735,7 +735,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     seo: Schema.Attribute.String;
     short: Schema.Attribute.RichText;
     slug: Schema.Attribute.String;
-    specifications: Schema.Attribute.Blocks;
+    specifications: Schema.Attribute.RichText;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

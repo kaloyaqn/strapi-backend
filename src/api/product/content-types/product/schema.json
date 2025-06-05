@@ -71,6 +71,9 @@
       "relation": "manyToMany",
       "target": "api::attribute-value.attribute-value",
       "inversedBy": "products"
+    },
+    "specifications": {
+      "type": "richtext"
     }
   }
 }
