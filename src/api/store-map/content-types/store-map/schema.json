@@ -45,6 +45,9 @@
     "phone_number": {
       "type": "string"
     },
+    "contact_name": {
+      "type": "string"
+    },
     "note": {
       "type": "text"
     },
