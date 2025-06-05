@@ -646,7 +646,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     notes: Schema.Attribute.Text;
     order_item: Schema.Attribute.Component<'shared.order-item', true>;
     order_status: Schema.Attribute.Enumeration<
-      ['pending', 'processing', 'completed', 'cancelled']
+      ['pending', 'processing', 'completed', 'cancelled', 'returned']
     >;
     phone: Schema.Attribute.String;
     postalCode: Schema.Attribute.String;
@@ -728,6 +728,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     price: Schema.Attribute.Decimal;
+    price_euro: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
     quantity: Schema.Attribute.Integer;
     related: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
@@ -756,7 +757,8 @@ export interface ApiStoreMapStoreMap extends Struct.CollectionTypeSchema {
     address: Schema.Attribute.String;
     bulstat: Schema.Attribute.String;
     city: Schema.Attribute.String;
-    county: Schema.Attribute.Enumeration<['greece', 'romania']>;
+    contact_name: Schema.Attribute.String;
+    county: Schema.Attribute.Enumeration<['greece', 'romania', 'bulgaria']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -772,7 +774,7 @@ export interface ApiStoreMapStoreMap extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
-    note: Schema.Attribute.Blocks;
+    note: Schema.Attribute.Text;
     phone_number: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

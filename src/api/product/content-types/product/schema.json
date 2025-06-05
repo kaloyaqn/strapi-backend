@@ -17,6 +17,9 @@
     "price": {
       "type": "decimal"
     },
+    "price_euro": {
+      "type": "decimal"
+    },
     "images": {
       "type": "media",
       "multiple": true,
