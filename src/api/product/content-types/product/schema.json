@@ -14,6 +14,12 @@
     "name": {
       "type": "string"
     },
+    "sku": {
+      "type": "string"
+    },
+    "ean": {
+      "type": "string"
+    },
     "price": {
       "type": "decimal"
     },
@@ -49,6 +55,9 @@
     "description": {
       "type": "richtext"
     },
+    "specifications": {
+      "type": "richtext"
+    },
     "short": {
       "type": "richtext"
     },
@@ -71,9 +80,6 @@
       "relation": "manyToMany",
       "target": "api::attribute-value.attribute-value",
       "inversedBy": "products"
-    },
-    "specifications": {
-      "type": "richtext"
     }
   }
 }
