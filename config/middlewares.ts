@@ -20,6 +20,8 @@ export default [
       enabled: true,
       origin: [
         'https://lyraq.vercel.app',
+        'https://lyraq.vercel.app',
+        'https://store-map.vercel.app',
         'http://localhost:3000',
         'http://localhost:3001',
         'https://nordic-storefront.vercel.app'

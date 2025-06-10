@@ -716,6 +716,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.RichText;
+    ean: Schema.Attribute.String;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -734,6 +735,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     related: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
     seo: Schema.Attribute.String;
     short: Schema.Attribute.RichText;
+    sku: Schema.Attribute.String;
     slug: Schema.Attribute.String;
     specifications: Schema.Attribute.RichText;
     updatedAt: Schema.Attribute.DateTime;
