@@ -733,7 +733,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     quantity: Schema.Attribute.Integer;
     related: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
-    seo: Schema.Attribute.String;
+    seo: Schema.Attribute.Component<'shared.seo', true>;
     short: Schema.Attribute.RichText;
     sku: Schema.Attribute.String;
     slug: Schema.Attribute.String;

@@ -61,9 +61,6 @@
     "short": {
       "type": "richtext"
     },
-    "seo": {
-      "type": "string"
-    },
     "categories": {
       "type": "relation",
       "relation": "manyToMany",
@@ -80,6 +77,11 @@
       "relation": "manyToMany",
       "target": "api::attribute-value.attribute-value",
       "inversedBy": "products"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.seo"
     }
   }
 }
