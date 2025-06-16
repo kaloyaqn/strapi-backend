@@ -24,7 +24,8 @@ export default [
         'https://store-map.vercel.app',
         'http://localhost:3000',
         'http://localhost:3001',
-        'https://nordic-storefront.vercel.app'
+        'https://nordic-storefront.vercel.app',
+        'https://www.instanordic.com',
       ],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     },
