@@ -62,6 +62,11 @@
     },
     "order": {
       "type": "integer"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.seo"
     }
   }
 }
