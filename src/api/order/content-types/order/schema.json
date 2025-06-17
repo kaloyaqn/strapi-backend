@@ -48,12 +48,6 @@
         "returned"
       ]
     },
-    "users_permissions_user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "orders"
-    },
     "date": {
       "type": "date"
     },
@@ -64,6 +58,12 @@
     },
     "recaptchaToken": {
       "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "orders"
     }
   }
 }
