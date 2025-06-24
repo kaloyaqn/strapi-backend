@@ -38,6 +38,9 @@
     "total": {
       "type": "decimal"
     },
+    "delivery_fee": {
+      "type": "decimal"
+    },
     "order_status": {
       "type": "enumeration",
       "enum": [
