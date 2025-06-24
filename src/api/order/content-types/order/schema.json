@@ -41,6 +41,9 @@
     "delivery_fee": {
       "type": "decimal"
     },
+    "delivery_method": {
+      "type": "string"
+    },
     "order_status": {
       "type": "enumeration",
       "enum": [
