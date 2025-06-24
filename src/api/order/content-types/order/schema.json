@@ -48,6 +48,13 @@
         "returned"
       ]
     },
+    "payment_status": {
+      "type": "enumeration",
+      "enum": [
+        "paid",
+        "not-paid"
+      ]
+    },
     "date": {
       "type": "date"
     },
